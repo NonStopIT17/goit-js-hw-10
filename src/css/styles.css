@@ -19,3 +19,24 @@ body {
   margin-bottom: 16px;
 }
 
+.country-list__item {
+  display: flex;
+  list-style: none;
+}
+.country-icon {
+  margin-right: 10px;
+  width: 200px;
+}
+.coutry-name {
+  font-size: 50px;
+  font-weight: 700;
+}
+.country-info__list {
+  list-style: none;
+}
+.description {
+  font-weight: 700;
+}
+.country-info__item{
+  font-size: 20px;
+}
