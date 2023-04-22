@@ -1,5 +1,4 @@
 import { countryInfo, countryList } from './fetch.js';
-
 function vizualCountriesList(countries) {
   countryList.innerHTML = countries.reduce(
     (result, item) =>
@@ -11,7 +10,6 @@ function vizualCountriesList(countries) {
   );
   countryInfo.innerHTML = '';
 }
-
 function vizualOneCountry(country) {
   countryList.innerHTML = `<li class="country-list__item">
              <img class="country-icon" src="${country.flags.svg}"/>
@@ -19,10 +17,10 @@ function vizualOneCountry(country) {
         </li>`;
   countryInfo.innerHTML = `
           <ul class="country-info__list">
-          <li class="country-info__item"><p><span class="description">capital:</span> ${
+          <li class="country-info__item"><p><span class="description">capital: </span> ${
             country.capital
           }</p></li>
-          <li class="country-info__item"><p><span class="description">population:</span> ${
+          <li class="country-info__item"><p><span class="description">population: </span> ${
             country.population
           }</p></li>
           <li class="country-info__item"><p><span class="description">languages: </span>${Object.values(
@@ -30,5 +28,4 @@ function vizualOneCountry(country) {
           )}</p></li>
           </ul>`;
 }
-
 export { vizualOneCountry, vizualCountriesList };

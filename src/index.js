@@ -8,10 +8,8 @@ import {
 import { vizualOneCountry, vizualCountriesList } from './js/vizual';
 const DEBOUNCE_DELAY = 300;
 const debounce = require('lodash.debounce');
-
 const input = document.querySelector('#search-box');
 input.addEventListener('input', debounce(inputHandling, DEBOUNCE_DELAY));
-
 function inputHandling(event) {
   const name = event.target.value.trim().toLowerCase();
   if (!name) {
@@ -19,7 +17,6 @@ function inputHandling(event) {
     countryInfo.innerHTML = '';
     return;
   }
-
   fetchCountries(name)
     .then(data => {
       if (data.length > 10) {
@@ -34,5 +31,7 @@ function inputHandling(event) {
     })
     .catch(() => {
       Notify.failure('Oops, there is no country with that name');
+      countryList.innerHTML = '';
+      countryInfo.innerHTML = '';
     });
 }

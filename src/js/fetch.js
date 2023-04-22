@@ -1,6 +1,5 @@
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
-
 function fetchCountries(name) {
   return fetch(
     `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
@@ -11,5 +10,4 @@ function fetchCountries(name) {
     return response.json();
   });
 }
-
 export { countryList, countryInfo, fetchCountries };
