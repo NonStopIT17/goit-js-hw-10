@@ -1,5 +1,6 @@
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import './css/styles.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import {
   countryList,
   countryInfo,
@@ -29,9 +30,11 @@ function inputHandling(event) {
         vizualOneCountry(data[0]);
       }
     })
-    .catch(() => {
+    .catch(err => {
+      if(err.message === "Not Found"){
+        Notify.failure("Something went wrong");
+        return;
+      }
       Notify.failure('Oops, there is no country with that name');
-      countryList.innerHTML = '';
-      countryInfo.innerHTML = '';
     });
 }

@@ -8,6 +8,6 @@ function fetchCountries(name) {
       throw new Error();
     }
     return response.json();
-  });
+  })
 }
 export { countryList, countryInfo, fetchCountries };

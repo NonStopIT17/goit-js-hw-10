@@ -25,7 +25,7 @@ function vizualOneCountry(country) {
           }</p></li>
           <li class="country-info__item"><p><span class="description">languages: </span>${Object.values(
             country.languages
-          ).join('')}</p></li>
+          ).join(',')}</p></li>
           </ul>`;
 }
 export { vizualOneCountry, vizualCountriesList };
